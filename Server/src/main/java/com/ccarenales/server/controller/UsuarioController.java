@@ -11,17 +11,14 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/usuario")
-@CrossOrigin(origins = "http://localhost:8080")
 public class UsuarioController {
     @Autowired
     private UsuarioService usuarioService;
     @GetMapping("/")
-    @CrossOrigin(origins = "http://localhost:8080")
     public List<Usuario> buscarUsuarios(){
         return usuarioService.buscarTodos();
     }
     @GetMapping("/{id}")
-    @CrossOrigin(origins = "http://localhost:8080")
     public ResponseEntity buscarUsuario(@PathVariable("id") long id){
         Usuario usuario = usuarioService.buscar(id);
         if (usuario == null){
@@ -30,12 +27,10 @@ public class UsuarioController {
         return new ResponseEntity(usuario, HttpStatus.OK);
     }
     @PostMapping(value = "/")
-    @CrossOrigin(origins = "http://localhost:8080")
     public ResponseEntity<?> nuevaUsuario(@RequestBody Usuario usuario){
         return new ResponseEntity<>(usuarioService.crear(usuario), HttpStatus.OK);
     }
     @PutMapping("/{id}")
-    @CrossOrigin(origins = "http://localhost:8080")
     public ResponseEntity<?> actualizarUsuario(@PathVariable long id, @RequestBody Usuario usuario){
         Usuario usuarioTemp = usuarioService.buscar(id);
         usuarioTemp.setNickname(usuario.getNickname());
@@ -44,7 +39,6 @@ public class UsuarioController {
         return new ResponseEntity<>(usuarioService.actualizar(usuario), HttpStatus.OK);
     }
     @DeleteMapping("/{id}")
-    @CrossOrigin(origins = "http://localhost:8080")
     public ResponseEntity<?> eliminarUsuario(@PathVariable long id){
         usuarioService.eliminar(id);
         return new ResponseEntity<>(new Usuario(), HttpStatus.OK);
