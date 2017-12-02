@@ -1,0 +1,27 @@
+.item-text{
+    font-size: 15px;
+}
+
+.busqueda{
+    margin: 20px;
+    height: 500px;
+    width: 400px;
+}
+
+.busqueda-view{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.subText{
+    margin: 20px;
+    font-size: 25px;
+    color: #95989A;
+}
+
+.item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

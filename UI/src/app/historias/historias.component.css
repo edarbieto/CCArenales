@@ -1,0 +1,49 @@
+.subText{
+    margin: 20px;
+    font-size: 25px;
+    color: #95989A;
+    text-align: center;
+}
+
+.item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item-text{
+    font-size: 15px;
+}
+
+.historias{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.busqueda{
+    margin: 20px;
+    height: 500px;
+    width: 500px;
+}
+.boton-ingresar{
+    align-self: center;
+    width: 130px;
+    height: 35px;
+    border-radius: 50px;
+    font-size: 13px;
+}
+
+.texto{
+    font-size: 15px;
+    margin: 20px;
+}
+
+.boton-publicar{
+    align-self: center;
+    width: 130px;
+    height: 35px;
+    border-radius: 50px;
+    font-size: 13px;
+}

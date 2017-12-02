@@ -1,0 +1,33 @@
+<div id="content" class="historias">
+  <div>
+    <div>
+      <p class="subText">Historias</p>
+    </div>
+    <dx-list [dataSource]="historias" searchEnabled="true" searchExpr="['nombre']" itemTemplate="listItem" class="busqueda">
+      <div *dxTemplate="let item of 'listItem'; let i = index">
+        <a routerLink="/historia/{{item.id}}">
+          <div class="item">
+            <div>
+              <p class="item-text">
+                <b>Nombre: </b>
+                <span>{{item.titulo}}</span>
+              </p>
+              <img src="{{item.picUri}}?random={{i}}" />
+            </div>
+          </div>
+        </a>
+      </div>
+    </dx-list>
+  </div>
+  <div *ngIf="usuario" class="historias">
+    <div>
+      <p class="subText">Nueva historia</p>
+      <dx-text-area [width]="400" [height]="32" [maxLength]="250" [(value)]="nuevaHistoria.titulo" class="texto">
+      </dx-text-area>
+      <dx-text-area [width]="400" [height]="180" [maxLength]="250" [(value)]="nuevaHistoria.historia" class="texto">
+      </dx-text-area>
+      <dx-button (onClick)="publicar()" text="Publicar" type="success" class="boton-publicar">
+      </dx-button>
+    </div>
+  </div>
+</div>

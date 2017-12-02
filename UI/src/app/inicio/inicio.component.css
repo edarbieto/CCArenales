@@ -1,0 +1,126 @@
+.cuadro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cuadro-menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 150px;
+}
+
+.cuadro-buscar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    margin: 2px;
+}
+
+.logo_icon{
+    margin-top: 10px;
+    width: 220px;
+    height: 145px;
+}
+
+.menu_icon{
+    width: 60px;
+    height: 60px;
+}
+
+.boton{
+    width: 166px;
+    height: 42px;
+    border-radius: 50px;
+    font-size: 15px;
+}
+
+.boton-search{
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+}
+
+.cabecera{
+    border-bottom: 1px rgb(149, 152, 154) solid;
+    box-shadow: 0 1px 3px rgb(149, 152, 154);
+}
+
+.textbox{
+    margin: 10px;
+    width: 150px;
+    font-size: 15px;
+}
+
+.menu{
+    direction: column;
+}
+
+.boton-menu{
+    width: 150px;
+    height: 35px;
+    border-radius: 50px;
+    font-size: 15px;
+}
+
+.item-menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.imagen-perfil{
+    width: 128px;
+    height: 128px;
+    border-radius: 100%;
+}
+
+.subText{
+    margin: 20px;
+    font-size: 25px;
+    color: #95989A;
+}
+
+.carousel{
+    margin: 40px;
+}
+
+.item-text{
+    font-size: 15px;
+}
+
+.imagen-historia{
+    margin: 20px;
+    width: 300px;
+    height: 300px;
+}
+
+.historia-mes{
+    margin: 50px;
+    align-items: center;
+    text-align: center;
+}
+
+.historia{    
+    font-size: 15px;
+}
+
+.historia-titulo{    
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.boton-ingresar{
+    align-self: center;
+    width: 130px;
+    height: 35px;
+    border-radius: 50px;
+    font-size: 13px;
+}
+
+.login-form{
+    text-align: center;
+}

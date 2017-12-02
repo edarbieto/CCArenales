@@ -1,0 +1,12 @@
+<div id="content" class="historia">
+  <div>
+    <dx-button *ngIf="true" text="Atras" class="boton" type="danger" (onClick)="back()"></dx-button>
+    <div class="imagen">
+      <img *ngIf="historia" src="{{historia.picUri}}" />
+    </div>
+    <p class="nombre">{{historia.titulo}}</p>
+    <p class="descripcion">{{historia.historia}}</p>
+    <p class="subText">Fecha</p>
+    <p class="descripcion">{{fecha}}</p>
+  </div>
+</div>

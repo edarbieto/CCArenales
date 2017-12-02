@@ -1,0 +1,64 @@
+.subText{
+    margin: 20px;
+    font-size: 25px;
+    color: #95989A;
+}
+
+.imagen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nombre{
+    margin: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #95989A;
+}
+
+.descripcion{
+    margin: 20px;
+    font-size: 15px;
+    color: #95989A;
+}
+
+.precio{
+    margin: 20px;
+    font-size: 25px;
+    font-weight: bold;
+    color: #95989A;
+}
+
+.tienda{
+    margin: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.boton{
+    text-align: center;
+    width: 130px;
+    height: 35px;
+    margin: 20px;
+    border-radius: 50px;
+    font-size: 13px;
+}
+
+.busqueda{
+    margin: 20px;
+    height: 500px;
+    width: 500px;
+}
+
+.item-text{
+    font-size: 15px;
+}
+
+.item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

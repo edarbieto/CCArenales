@@ -1,0 +1,20 @@
+<div id="content" class="producto">
+    <div>
+        <dx-button *ngIf="true" text="Atras" class="boton" type="danger" (onClick)="back()"></dx-button>
+        <div class="imagen">
+            <img *ngIf="producto" src="{{producto.picUri}}" />
+        </div>
+        <p class="nombre">{{producto.nombre}}</p>
+        <p class="subText">Descripcion</p>
+        <p class="descripcion">{{producto.descripcion}}</p>
+        <p class="subText">Tienda</p>
+        <p class="descripcion">{{producto.tienda.nombre}}</p>
+        <p class="subText">Precio</p>
+        <p class="precio">S./ {{producto.precio}}</p>
+        <p *ngIf="usuario" class="subText">Cantidad</p>
+        <dx-slider *ngIf="usuario" [min]="1" [max]="10" [(value)]="cantidad">
+            <dxo-tooltip [enabled]="true" [format]="format" showMode="always" position="bottom"></dxo-tooltip>
+        </dx-slider>
+        <dx-button *ngIf="usuario" text="Comprar" class="boton" type="default" (onClick)="comprar()"></dx-button>
+    </div>
+</div>

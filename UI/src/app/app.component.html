@@ -1,0 +1,79 @@
+<dx-slide-out-view contentTemplate="view" menuTemplate="menu" [(menuVisible)]="estadoMenu">
+    <div *dxTemplate="let viewData of 'view'">
+        <div class="cabecera">
+            <dx-box direction="row" width="100%" height="150">
+                <dxi-item [ratio]="1" class="cuadro-menu">
+                    <img src="../assets/menu_icon.png" class="menu_icon" (click)="clickMenu()" />
+                </dxi-item>
+                <dxi-item [ratio]="2" class="cuadro">
+                    <a routerLink="">
+                        <img src="../assets/logo.png" class="logo_icon" />
+                    </a>
+                </dxi-item>
+                <dxi-item [ratio]="1" class="cuadro">
+                    <dx-button *ngIf="!loggeado" text="Iniciar sesión" class="boton" (onClick)="iniciarSesion()"></dx-button>
+                    <dx-button *ngIf="loggeado" text="Bienvenido, {{usuario.nickname}}" class="boton" type="default"></dx-button>
+                    <dx-box direction="row" class="cuadro-buscar">
+                        <dxi-item [ratio]="6" class="cuadro">
+                            <dx-text-box placeholder="Buscar..." [(value)]="busqueda" class="textbox"></dx-text-box>
+                        </dxi-item>
+                        <dxi-item [ratio]="1" class="cuadro">
+                            <a routerLink="/busqueda">
+                                <dx-button icon="../assets/search_icon.png" class="boton-search" (onClick)="buscar()">
+                                </dx-button>
+                            </a>
+                        </dxi-item>
+                    </dx-box>
+                </dxi-item>
+            </dx-box>
+        </div>
+        <dx-scroll-view [height]="500" [width]="auto" direction="both">
+            <router-outlet></router-outlet>
+        </dx-scroll-view>
+    </div>
+    <div *dxTemplate="let menuData of 'menu'" width="300px">
+        <p class="item-menu">
+            <img *ngIf="!loggeado" [(src)]="imagenPerfil" class="imagen-perfil" />
+            <img *ngIf="loggeado" [(src)]="usuario.picUri" class="imagen-perfil" />
+        </p>
+        <p *ngIf="loggeado" class="item-menu">
+            <a routerLink="/perfil">
+                <dx-button text="Perfil" class="boton-menu" (onClick)="clickEnMenuItem()"></dx-button>
+            </a>
+        </p>
+        <p class="item-menu">
+            <a routerLink="/historias">
+                <dx-button text="Historias" class="boton-menu" (onClick)="clickEnMenuItem()"></dx-button>
+            </a>
+        </p>
+        <p *ngIf="loggeado" class="item-menu">
+            <a routerLink="/pedidos">
+                <dx-button text="Pedidos" class="boton-menu" (onClick)="clickEnMenuItem()"></dx-button>
+            </a>
+        </p>
+        <p *ngIf="loggeado" class="item-menu">
+            <dx-button text="Cerrar sesión" class="boton-menu" (onClick)="salir()"></dx-button>
+        </p>
+    </div>
+</dx-slide-out-view>
+
+<dx-popup title="Iniciar sesión" [(visible)]="isPopupVisible" [showTitle]="false" [dragEnabled]="false" [closeOnOutsideClick]="true"
+    [width]="300" [height]="200">
+    <div *dxTemplate="let data of 'content'" class="login-form">
+        <dx-form [formData]="inicioSesionData" validationGroup="login">
+            <dxi-item datafield="name"></dxi-item>
+            <dxi-item itemType="group" caption="Iniciar sesión">
+                <dxi-item dataField="username">
+                    <dxi-validation-rule type="required" message="Username obligatorio">
+                    </dxi-validation-rule>
+                </dxi-item>
+                <dxi-item dataField="password" [editorOptions]="{ mode: 'password' }">
+                    <dxi-validation-rule type="required" message="Password obligatorio">
+                    </dxi-validation-rule>
+                </dxi-item>
+            </dxi-item>
+        </dx-form>
+        <dx-button (onClick)="ingresar()" text="Ingresar" type="success" validationGroup="login" [useSubmitBehavior]="true" class="boton-ingresar">
+        </dx-button>
+    </div>
+</dx-popup>

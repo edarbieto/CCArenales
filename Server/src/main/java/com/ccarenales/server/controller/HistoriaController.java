@@ -11,14 +11,17 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/historia")
+@CrossOrigin(origins = "http://localhost:4200")
 public class HistoriaController {
     @Autowired
     private HistoriaService historiaService;
     @GetMapping("/")
+    @CrossOrigin(origins = "http://localhost:4200")
     public List<Historia> buscarHistorias(){
         return historiaService.buscarTodos();
     }
     @GetMapping("/{id}")
+    @CrossOrigin(origins = "http://localhost:4200")
     public ResponseEntity buscarHistoria(@PathVariable("id") long id){
         Historia historia = historiaService.buscar(id);
         if (historia == null){
@@ -27,10 +30,12 @@ public class HistoriaController {
         return new ResponseEntity(historia, HttpStatus.OK);
     }
     @PostMapping(value = "/")
+    @CrossOrigin(origins = "http://localhost:4200")
     public ResponseEntity<?> nuevaHistoria(@RequestBody Historia historia){
         return new ResponseEntity<>(historiaService.crear(historia), HttpStatus.OK);
     }
     @PutMapping("/{id}")
+    @CrossOrigin(origins = "http://localhost:4200")
     public ResponseEntity<?> actualizarHistoria(@PathVariable long id, @RequestBody Historia historia){
         Historia historiaTemp = historiaService.buscar(id);
         historiaTemp.setTitulo(historia.getTitulo());
@@ -39,6 +44,7 @@ public class HistoriaController {
         return new ResponseEntity<>(historiaService.actualizar(historia), HttpStatus.OK);
     }
     @DeleteMapping("/{id}")
+    @CrossOrigin(origins = "http://localhost:4200")
     public ResponseEntity<?> eliminarHistoria(@PathVariable long id){
         historiaService.eliminar(id);
         return new ResponseEntity<>(new Historia(), HttpStatus.OK);

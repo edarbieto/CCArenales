@@ -1,0 +1,46 @@
+<div id="content">
+    <div>
+        <p class="subText">Top productos</p>
+        <div class="carousel">
+            <dx-gallery #gallery id="galleryP" [dataSource]="topProductos" [height]="300" [slideshowDelay]="1500" [loop]="true" [showNavButtons]="true"
+                [showIndicator]="true" itemTemplate="item" wrapAround=true width="auto">
+                <div *dxTemplate="let data of 'item'; let i = index">
+                    <div>
+                        <p class="item-text">
+                            <b>Nombre: </b>
+                            <span>{{data.nombre}}</span>
+                        </p>
+                        <a routerLink="/producto/{{data.id}}">
+                            <img src="{{data.picUri}}?random={{i}}" />
+                        </a>
+                    </div>
+                </div>
+            </dx-gallery>
+        </div>
+        <p class="subText">Top Tiendas</p>
+        <div class="carousel">
+            <dx-gallery #gallery id="galleryT" [dataSource]="topTiendas" [height]="300" [slideshowDelay]="1500" [loop]="true" [showNavButtons]="true"
+                [showIndicator]="true" itemTemplate="item" wrapAround=true width="auto">
+                <div *dxTemplate="let data of 'item'; let i = index">
+                    <div>
+                        <p class="item-text">
+                            <b>Nombre: </b>
+                            <span>{{data.nombre}}</span>
+                        </p>
+                        <a routerLink="/tienda/{{data.id}}">
+                            <img src="{{data.picUri}}?random={{i}}" />
+                        </a>
+                    </div>
+                </div>
+            </dx-gallery>
+        </div>
+        <p class="subText">Historia del mes</p>
+        <div class="historia-mes">
+            <a *ngIf="historiaDelMes" routerLink="/historia/{{historiaDelMes.id}}">
+                <img *ngIf="historiaDelMes" src="{{historiaDelMes.picUri}}/" class="imagen-historia" />
+            </a>
+            <p *ngIf="historiaDelMes" class="historia-titulo">{{historiaDelMes.titulo}}</p>
+            <p *ngIf="historiaDelMes" class="historia">{{historiaDelMes.historia}}</p>
+        </div>
+    </div>
+</div>

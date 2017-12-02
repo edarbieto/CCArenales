@@ -1,0 +1,56 @@
+<div id="content" class="busqueda-view">
+  <div>
+    <p class="subText">Productos</p>
+    <dx-list [dataSource]="productos" searchEnabled="true" searchExpr="['nombre']" itemTemplate="listItem" class="busqueda">
+      <div *dxTemplate="let item of 'listItem'; let i = index">
+        <div class="item">
+          <div>
+            <p class="item-text">
+              <b>Nombre: </b>
+              <span>{{item.nombre}}</span>
+            </p>
+            <a routerLink="/producto/{{item.id}}">
+              <img src="{{item.picUri}}?random={{i}}" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </dx-list>
+  </div>
+  <div>
+    <p class="subText">Tiendas</p>
+    <dx-list [dataSource]="tiendas" searchEnabled="true" searchExpr="['nombre']" itemTemplate="listItem" class="busqueda">
+      <div *dxTemplate="let item of 'listItem'; let i = index">
+        <div class="item">
+          <div>
+            <p class="item-text">
+              <b>Nombre: </b>
+              <span>{{item.nombre}}</span>
+            </p>
+            <a routerLink="/tienda/{{item.id}}">
+              <img src="{{item.picUri}}?random={{i}}" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </dx-list>
+  </div>
+  <div>
+    <p class="subText">Historias</p>
+    <dx-list [dataSource]="historias" searchEnabled="true" searchExpr="['nombre']" itemTemplate="listItem" class="busqueda">
+      <div *dxTemplate="let item of 'listItem'; let i = index">
+        <div class="item">
+          <div>
+            <p class="item-text">
+              <b>Nombre: </b>
+              <span>{{item.titulo}}</span>
+            </p>
+            <a routerLink="/historia/{{item.id}}">
+              <img src="{{item.picUri}}?random={{i}}" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </dx-list>
+  </div>
+</div>

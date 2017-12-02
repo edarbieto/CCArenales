@@ -1,0 +1,30 @@
+.subText{
+    margin: 20px;
+    font-size: 25px;
+    color: #95989A;
+}
+
+.imagen{
+    width: 200px;
+    height: 200px;
+}
+
+.texto{
+    font-size: 15px;
+    text-align: center;
+}
+
+.usuario{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+}
+
+.boton{
+    margin: 20px;
+    width: 130px;
+    height: 35px;
+    border-radius: 50px;
+    font-size: 13px;
+}

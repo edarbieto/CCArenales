@@ -1,0 +1,13 @@
+<div id="content" class="tienda">
+  <div>
+    <dx-button *ngIf="true" text="Atras" class="boton" type="danger" (onClick)="back()"></dx-button>
+    <div class="imagen">
+      <img *ngIf="tienda" src="{{tienda.picUri}}" />
+    </div>
+    <p class="nombre">{{tienda.nombre}}</p>
+    <p class="subText">Descripcion</p>
+    <p class="descripcion">{{tienda.descripcion}}</p>
+    <p class="subText">Calificacion</p>
+    <p class="descripcion">{{tienda.nEstrellas}}</p>
+  </div>
+</div>

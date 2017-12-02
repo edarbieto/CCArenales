@@ -1,0 +1,20 @@
+<div id="content" class="usuario">
+  <div *ngIf="usuario">
+    <dx-button text="Atras" class="boton" type="danger" (onClick)="back()"></dx-button>
+    <div>
+      <img src="{{usuario.picUri}}" class="imagen" />
+    </div>
+    <p class="subText">Nickname</p>
+    <dx-text-box [(value)]="usuario.nickname" class="texto"></dx-text-box>
+    <p class="subText">Username</p>
+    <dx-text-box [(value)]="usuario.username" class="texto"></dx-text-box>
+    <p class="subText">Actual Password</p>
+    <dx-text-box [(value)]="actualPassword" class="texto" mode="password"></dx-text-box>
+    <p class="subText">Nuevo Password</p>
+    <dx-text-box [(value)]="nuevoPassword" class="texto" mode="password"></dx-text-box>
+    <dx-button text="Grabar" class="boton" type="default" (onClick)="guardar()"></dx-button>
+  </div>
+  <div *ngIf="!usuario">
+    <p class="subText">Por favor inicie sesión primero</p>
+  </div>
+</div>

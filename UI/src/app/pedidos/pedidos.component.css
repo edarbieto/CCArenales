@@ -1,0 +1,20 @@
+.cabecera{
+    margin: 30px;
+    border: 2px solid rgb(149, 152, 154);
+    border-radius: 25px;
+}
+
+.columna{
+    text-align: center;
+    font-size: 15px;
+    padding-top: 10px;
+    height: 100%;
+}
+
+.item1{
+    margin: 30px;
+}
+
+.item2{
+    margin: 30px;
+}

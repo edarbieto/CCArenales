@@ -1,0 +1,63 @@
+<div id="content" class="producto">
+    <!-- <div *ngIf="true">
+        <div *ngFor="let pedido of pedidoProductos">
+            <div>
+                <p>{{pedido.id}}</p>
+                <p>{{pedido.producto.nombre}}</p>
+                <p>{{pedido.producto.tienda.nombre}}</p>
+                <p>{{pedido.cantidad}}</p>
+                <p>{{pedido.pedido.fechaPedido}}</p>
+                <p>{{pedido.pedido.fechaEntrega}}</p>
+            </div>
+        </div>
+    </div> -->
+    <p>{{usuario == null? 'si' : 'no'}}</p>
+    <p>{{pedidosProducto == null? 'si' : 'no'}}</p>
+    <dx-box direction="row" height="auto" width="auto" class="cabecera">
+        <dxi-item [ratio]="1" class="columna">
+            <p>ID</p>
+        </dxi-item>
+        <dxi-item [ratio]="1" class="columna">
+            <p>PRODUCTO</p>
+        </dxi-item>
+        <dxi-item [ratio]="1" class="columna">
+            <p>TIENDA</p>
+        </dxi-item>
+        <dxi-item [ratio]="1" class="columna">
+            <p>CANTIDAD</p>
+        </dxi-item>
+        <dxi-item [ratio]="1" class="columna">
+            <p>FECHA PEDIDO</p>
+        </dxi-item>
+        <dxi-item [ratio]="1" class="columna">
+            <p>FECHA ENTREGA</p>
+        </dxi-item>
+    </dx-box>
+    <dx-data-grid [(dataSource)]="pp">
+    </dx-data-grid>
+
+    <li *ngFor="let pedido of pedidoProductos">
+        
+    <p>{{usuario == null? 'si' : 'no'}}</p>
+        <dx-box direction="row" height="auto" width="auto" class="cabecera">
+            <dxi-item [ratio]="1" class="columna">
+                <p>{{pedido.id}}</p>
+            </dxi-item>
+            <dxi-item [ratio]="1" class="columna">
+                <p>{{pedido.producto.nombre}}</p>
+            </dxi-item>
+            <dxi-item [ratio]="1" class="columna">
+                <p>{{pedido.producto.tienda.nombre}}</p>
+            </dxi-item>
+            <dxi-item [ratio]="1" class="columna">
+                <p>{{pedido.cantidad}}</p>
+            </dxi-item>
+            <dxi-item [ratio]="1" class="columna">
+                <p>{{pedido.pedido.fechaPedido}}</p>
+            </dxi-item>
+            <dxi-item [ratio]="1" class="columna">
+                <p>{{pedido.pedido.fechaEntrega}}</p>
+            </dxi-item>
+        </dx-box>
+    </li> 
+</div>
